@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/app.css">
 </head>
 
-<body  ng-app='mainApp' ng-controller='myCtrl'>
+<body  ng-app='mainApp' >
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -22,9 +22,9 @@
             </button>
             <a class="navbar-brand" href="#">Moviecat</a>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <form class="navbar-form navbar-right">
-                <input type="text" class="form-control" placeholder="搜索">
+        <div id="navbar" class="navbar-collapse collapse" ng-controller='myCtrl'>
+            <form class="navbar-form navbar-right" ng-submit='search()' >
+                 <input type="text" class="form-control" placeholder="搜索" ng-model='searchText'>
             </form>
         </div>
     </div>
@@ -47,10 +47,12 @@
 <!--引用angular文件和路由模块文件-->
 <script src="node_modules/angular/angular.js"></script>
 <script src="node_modules/angular/angular-route.js"></script>
+<script src="js/service/service.js"></script>
 <!--引入主模块-->
 <script src="js/main/main.js"></script>
 <!--正在热映子模块-->
 <script src="js/in_theaters/in_theaters.js"></script>
+<script src="js/subject/subject.js"></script>
 </body>
 
 </html>
